@@ -2,11 +2,10 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Gallery</title>
+  <title>Expandable Image Gallery</title>
 
   <!-- Bootstrap & Lightbox CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
-    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
 
   <style>
@@ -14,22 +13,20 @@
       padding: 40px;
     }
 
-    .tz-gallery .thumbnail {
-      padding: 0;
-      margin-bottom: 30px;
-      background-color: #fff;
-      border-radius: 4px;
-      border: none;
-      transition: 0.15s ease-in-out;
-      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.06);
+    .hidden-images {
+      display: none;
     }
 
-    .tz-gallery .thumbnail:hover {
-      transform: translateY(-10px) scale(1.02);
+    .thumbnail img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease;
     }
 
-    .baguetteBox-button {
-      background-color: transparent !important;
+    .thumbnail:hover img {
+      transform: scale(1.03);
     }
   </style>
 </head>
@@ -37,55 +34,35 @@
 <body>
 
   <main>
-    <section id="gallery">
-      <div class="gallery-container container">
-        <div class="tz-gallery">
-          <div class="row">
+    <div class="container tz-gallery">
+      <div class="row">
 
-            <div class="col-sm-6 col-md-4">
-              <div class="thumbnail">
-                <a class="lightbox" href="1.png">
-                  <img src="1.png" alt="Image 1">
-                </a>
-              </div>
-            </div>
-
-            <div class="col-sm-6 col-md-4">
-              <div class="thumbnail">
-                <a class="lightbox" href="2.png">
-                  <img src="2.png" alt="Image 2">
-                </a>
-              </div>
-            </div>
-
-            <div class="col-sm-6 col-md-4">
-              <div class="thumbnail">
-                <a class="lightbox" href="3.png">
-                  <img src="3.png" alt="Image 3">
-                </a>
-              </div>
-            </div>
-            
-            <div class="col-sm-6 col-md-4">
-              <div class="thumbnail">
-                <a class="lightbox" href="4.png">
-                  <img src="4.png" alt="Image 4">
-                </a>
-              </div>
-            </div>
-
-            <!-- Add more images as needed -->
-
+        <!-- Visible thumbnail -->
+        <div class="col-md-6 offset-md-3 text-center">
+          <div class="thumbnail">
+            <a class="lightbox" href="1.png">
+              <img src="1.png" alt="Click to view gallery">
+            </a>
           </div>
         </div>
+
+        <!-- Hidden gallery images -->
+        <div class="hidden-images">
+   
+          <a class="lightbox" href="2.png"><img src="2.png" alt="Hidden 2"></a>
+          <a class="lightbox" href="3.png"><img src="3.png" alt="Hidden 3"></a>
+          <a class="lightbox" href="4.png"><img src="4.png" alt="Hidden 4"></a>
+        </div>
+
       </div>
-    </section>
+    </div>
   </main>
 
-  <!-- Scripts loaded at the end of body -->
+  <!-- BaguetteBox JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
   <script>
     baguetteBox.run('.tz-gallery');
   </script>
+
 </body>
 </html>

@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+  <meta charset="UTF-8">
+  <title>Gallery</title>
+
+  <!-- Bootstrap & Lightbox CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
-  <link href="./css/thumbnail-gallery.css" rel="stylesheet" />
 
   <style>
     .tz-gallery {
@@ -29,90 +31,61 @@
     .baguetteBox-button {
       background-color: transparent !important;
     }
-
-
-    .carousel-inner>.item>a>img,
-    .carousel-inner>.item>img,
-    .img-responsive,
-    .thumbnail a>img,
-    .thumbnail>img {
-      display: block;
-      max-width: 100%;
-      height: auto;
-    }
   </style>
-
 </head>
 
 <body>
 
-
   <main>
-
-
     <section id="gallery">
-      <div class=" gallery-container container">
+      <div class="gallery-container container">
         <div class="tz-gallery">
-
           <div class="row">
 
-            <!---------------------------------------------->
-            <div data-aos="flip-up" class="col-sm-6 col-md-4">
+            <div class="col-sm-6 col-md-4">
               <div class="thumbnail">
                 <a class="lightbox" href="1.png">
-                  <img src="1.png">
+                  <img src="1.png" alt="Image 1">
                 </a>
               </div>
             </div>
 
-            <!---------------------------------------------->
-
-            <div data-aos="flip-up" data-aos-delay="20" class="col-sm-6 col-md-4">
+            <div class="col-sm-6 col-md-4">
               <div class="thumbnail">
                 <a class="lightbox" href="2.png">
-                  <img src="2.png">
+                  <img src="2.png" alt="Image 2">
                 </a>
               </div>
             </div>
-            <!---------------------------------------------->
 
-            <div data-aos="flip-up" data-aos-delay="40" class="col-sm-6 col-md-4">
+            <div class="col-sm-6 col-md-4">
               <div class="thumbnail">
                 <a class="lightbox" href="3.png">
-                  <img src="3.png">
+                  <img src="3.png" alt="Image 3">
                 </a>
-
               </div>
             </div>
-            <!---------------------------------------------->
-
-            <div data-aos="flip-up" data-aos-delay="60" class="col-sm-6 col-md-4">
+            
+            <div class="col-sm-6 col-md-4">
               <div class="thumbnail">
                 <a class="lightbox" href="4.png">
-                  <img src="4.png">
+                  <img src="4.png" alt="Image 4">
                 </a>
               </div>
             </div>
-            <!---------------------------------------------->
 
-
-
-
-
+            <!-- Add more images as needed -->
 
           </div>
         </div>
       </div>
-
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
-      <script>
-        baguetteBox.run('.tz-gallery');
-      </script>
-
     </section>
-
-
   </main>
 
-
+  <!-- Scripts loaded at the end of body -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
+  <script>
+    baguetteBox.run('.tz-gallery');
+  </script>
+</body>
 </html>
